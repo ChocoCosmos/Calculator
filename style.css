@@ -1,0 +1,97 @@
+.calc-main, .calc-head, .calc-screen, .calc-body, .calc-button-row, .calc-button{
+    border: 0.5px solid;
+}
+
+html,body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+ }
+
+ body {
+    max-height: 100vh;
+    max-height: fill-available;
+    max-height: -webkit-fill-available;
+}
+
+html {
+    height: fill-available;
+    height: -webkit-fill-available;
+}
+p {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+div {
+    padding: 0;
+    margin: 0;
+}
+
+.calc-main{
+    width: 100vw;
+    height: 100dvh;
+    max-height: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+}
+
+.calc-head {
+    height: 40%;
+    width: 100vw;
+    display: flex;
+}
+
+.calc-screen {
+    display: flex;
+    width:100%;
+    flex-wrap: 1;
+    text-align: right;
+    align-items: center;
+    justify-content: right;
+}
+
+.calc-body {
+    width: 100%;
+    height: 60vh;
+}
+
+.calc-button-row {
+    height: 20%;
+    width: 100%;
+    display: flex;
+}
+
+.calc-button {
+    height: 100%;
+    width: 25%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.calc-group {
+    width: 25%;
+    display: flex;
+}
+
+#button-parenthesis-left {
+    width: 12.5vw;
+}
+
+#button-parenthesis-right {
+    width: 12.5vw;
+}
+
+
+.button-icon {
+    height: 25%;
+}
+
+#icon-decimal {
+    height: 12.5%;
+}
