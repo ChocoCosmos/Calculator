@@ -46,11 +46,6 @@ function equation_append(to_append) {
           eval_eq = "0".concat(to_append);}
       }
     } else {
-      console.log(eval_eq)
-      console.log(eval_eq.indexOf("("))
-        if ((eval_eq.includes("e")) && eval_eq.indexOf("(")===(-1)) {
-          eval_eq = "("+eval_eq+")"
-        } 
         eval_eq = eval_eq.concat(to_append);
     }
     refresh_screen();
@@ -155,6 +150,10 @@ function equation_evaluate() {
     catch(err) {
       eval_eq = "Error!";
     }
+
+    if (!isNaN(eval_eq) && eval_eq!="0"){
+      eval_eq = "("+eval_eq+")"
+    };
     refresh_screen();
 }
 
@@ -244,7 +243,6 @@ document.querySelector("#button-parenthesis-right").addEventListener("click", ()
   });
 
 document.addEventListener("keydown", (e) => {
-  console.log(e.key)
   if ((eval_eq=="NaN" || eval_eq==="Error!") || (last_press==="Enter" && e.key==="Enter")){
     eval_eq="0";
     refresh_screen()
