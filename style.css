@@ -1,6 +1,7 @@
 :root {
     --screeniconheight: 10vh;
     --decimaliconheight: 2.5vh;
+    --decimaliconpadding: 0.2%;
   }
 
 .calc-main, .calc-head, .calc-screen, .calc-body, .calc-button-row, .calc-button{
@@ -50,11 +51,12 @@ div {
 
 .calc-screen {
     display: flex;
-    width:100%;
+    width: 100%;
     flex-wrap: 1;
     text-align: right;
     align-items: center;
     justify-content: right;
+    padding: 5vh 5vh 5vh 5vh;
 }
 
 
@@ -96,7 +98,7 @@ div {
 
 
 .button-icon {
-    height: 25%;
+    height: 30%;
 }
 
 #icon-decimal {
@@ -116,4 +118,8 @@ div {
 
 #sicon-decimal{
     width: var(--decimaliconheight);
+}
+
+#s-dmal, #sicon-decimal{
+    padding: 0 var(--decimaliconpadding) 0 var(--decimaliconpadding);
 }

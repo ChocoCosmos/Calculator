@@ -1,5 +1,6 @@
 let eval_eq = "0";
 let svg_eq = "0";
+let last_press = null;
 refresh_screen();
 let screen_equation = document.querySelector("#calc-screen-equation");
 
@@ -45,6 +46,11 @@ function equation_append(to_append) {
           eval_eq = "0".concat(to_append);}
       }
     } else {
+      console.log(eval_eq)
+      console.log(eval_eq.indexOf("("))
+        if ((eval_eq.includes("e")) && eval_eq.indexOf("(")===(-1)) {
+          eval_eq = "("+eval_eq+")"
+        } 
         eval_eq = eval_eq.concat(to_append);
     }
     refresh_screen();
@@ -60,27 +66,43 @@ function get_screen_chars(){
 }
 
 function get_screen_total() {
-    let width_screen_total = (document.getElementById('calc-screen-main').offsetWidth);
+    let width_screen_total = (document.getElementById('calc-screen-main').offsetWidth)*(0.9);
     return width_screen_total
+}
+
+function change_units(var_change,units,increase=true){
+    if (increase){
+      document.documentElement.style.setProperty(var_change, ((getComputedStyle(document.documentElement).getPropertyValue(var_change)).slice(0,-(units.length))/0.75)+units);
+    }else{
+      document.documentElement.style.setProperty(var_change, ((getComputedStyle(document.documentElement).getPropertyValue(var_change)).slice(0,-(units.length))*0.75)+units);
+    };
 }
 
 function refresh_screen() {
     ele_calc_screen = document.getElementById("calc-screen-main").innerHTML = svg_equivalent();
 
     while (get_screen_chars()>get_screen_total()-1){
-      document.documentElement.style.setProperty('--screeniconheight', ((getComputedStyle(document.documentElement).getPropertyValue('--screeniconheight')).slice(0,-2)*0.75)+"vh");
-      document.documentElement.style.setProperty('--decimaliconheight', ((getComputedStyle(document.documentElement).getPropertyValue('--decimaliconheight')).slice(0,-2)*0.75)+"vh");
+      change_units("--screeniconheight","vh",false);
+      change_units("--decimaliconheight","vh",false);
+      change_units("--decimaliconpadding","%",false);
       ele_calc_screen = document.getElementById("calc-screen-main").innerHTML = svg_equivalent();
     };
 
     while (((get_screen_chars()/(0.75))<get_screen_total())&&(((getComputedStyle(document.documentElement).getPropertyValue('--screeniconheight')).slice(0,-2)/0.75)<10)){
-      document.documentElement.style.setProperty('--screeniconheight', ((getComputedStyle(document.documentElement).getPropertyValue('--screeniconheight')).slice(0,-2)/0.75)+"vh");
-      document.documentElement.style.setProperty('--decimaliconheight', ((getComputedStyle(document.documentElement).getPropertyValue('--decimaliconheight')).slice(0,-2)/0.75)+"vh");
+      change_units("--screeniconheight","vh");
+      change_units("--decimaliconheight","vh");
+      change_units("--decimaliconpadding","%");
       ele_calc_screen = document.getElementById("calc-screen-main").innerHTML = svg_equivalent();
     }
   }
 
 function svg_equivalent() {
+    if (eval_eq==="NaN"){
+      svg_eq = '<div class="screen-character"><img src="assets\\NaN\\n-solid.svg" alt="N" class="screen-icon" id="sicon-N1"></div><div class="screen-character"><img src="assets\\NaN\\a-solid.svg" alt="A" class="screen-icon" id="sicon-A"></div><div class="screen-character"><img src="assets\\NaN\\n-solid.svg" alt="N2" class="screen-icon" id="sicon-N"></div>'
+    } else if (eval_eq==="Error!"){
+      svg_eq = '<div class="screen-character"><img src="assets\\Error\\circle-exclamation-solid.svg" alt="Error" class="screen-icon" id="sicon-error"></div><div class="screen-character"><img src="assets\\Error\\e-solid.svg" alt="E" class="screen-icon" id="sicon-error-e1"></div><div class="screen-character"><img src="assets\\Error\\r-solid.svg" alt="R" class="screen-icon" id="sicon-error-r1"></div><div class="screen-character"><img src="assets\\Error\\r-solid.svg" alt="R" class="screen-icon" id="sicon-error-r2"></div><div class="screen-character"><img src="assets\\Error\\o-solid.svg" alt="O" class="screen-icon" id="sicon-error-o1"></div><div class="screen-character"><img src="assets\\Error\\r-solid.svg" alt="R" class="screen-icon" id="sicon-error-r3"></div>'
+    }
+    else{
     svg_eq = eval_eq.replaceAll("/",'<div class="scr~~n?charact~r"><img src="ass~ts/buttons/divid~?solid_svg" alt="/" class="scr~~n?icon" id="sicon?division"></div>')
     svg_eq = svg_eq.replaceAll("-",'<div class="scr~~n-charact~r"><img src="ass~ts\\buttons\\minus-solid_svg" alt="-" class="scr~~n-icon" id="sicon-subtraction"></div>')
     svg_eq = svg_eq.replaceAll(".",'<div class="scr~~n-charact~r" id="s-dmal"><img src="ass~ts/buttons/circl~-solid.svg" alt="." class="scr~~n-icon" id="sicon-d~cimal"></div>')
@@ -103,7 +125,7 @@ function svg_equivalent() {
     svg_eq = svg_eq.replaceAll("_",'.')
     svg_eq = svg_eq.replaceAll("?",'-')
     svg_eq = svg_eq.replaceAll("~",'e')
-    svg_eq = svg_eq.replaceAll("∞",'<div class="screen-character"><img src="assets/buttons/infinity-solid.svg" alt="*" class="screen-icon" id="sicon-multiplication"></div>')
+    svg_eq = svg_eq.replaceAll("∞",'<div class="screen-character"><img src="assets/buttons/infinity-solid.svg" alt="*" class="screen-icon" id="sicon-multiplication"></div>')};
     return svg_eq;
 }
 
@@ -223,6 +245,10 @@ document.querySelector("#button-parenthesis-right").addEventListener("click", ()
 
 document.addEventListener("keydown", (e) => {
   console.log(e.key)
+  if ((eval_eq=="NaN" || eval_eq==="Error!") || (last_press==="Enter" && e.key==="Enter")){
+    eval_eq="0";
+    refresh_screen()
+  }
   if (e.ctrlKey && e.key === 'Backspace') {
     equation_reset();
   } else if (Object.keys(calc_keys).includes(e.key)) {
@@ -237,4 +263,5 @@ document.addEventListener("keydown", (e) => {
   } else if (e.key == "Backspace") {
     equation_backspace();
   }
+  last_press = e.key
 })
