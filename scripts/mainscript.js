@@ -139,6 +139,10 @@ function equation_backspace() {
 }
 
 function equation_evaluate() {
+    if (eval_eq==="Error!"){
+      eval_eq="0";
+      refresh_screen()
+    }else {
     eval_eq = eval_eq.replaceAll("%","/100");
     try {
       result = (window.mathjs.format((window.mathjs.evaluate(eval_eq)),{precision:10})).toString();
@@ -154,7 +158,7 @@ function equation_evaluate() {
     if (!isNaN(eval_eq) && eval_eq!="0"){
       eval_eq = "("+eval_eq+")"
     };
-    refresh_screen();
+    refresh_screen();}
 }
 
 document.querySelector("#button-seven").addEventListener("click", () => {
@@ -262,4 +266,70 @@ document.addEventListener("keydown", (e) => {
     equation_backspace();
   }
   last_press = e.key
+})
+
+document.addEventListener("keydown",(e) => {
+  if (e.ctrlKey && e.key === 'Backspace') {
+    ele = document.getElementById("icon-allclear");
+    ele_parent = (ele.parentElement);
+    ele_parent.classList.remove('calc-button')
+    ele_parent.classList.add('calc-button-after')
+    ele.classList.remove('button-icon')
+    ele.classList.add('button-icon-after')
+  } else if (e.key==="Enter" || e.key==="Backspace" || e.key==="."){
+    if (e.key==="."){
+      key_pressed = "decimal"
+    }else if (e.key==="Backspace"){
+      key_pressed = "backspace"
+    }else if (e.key==="Enter"){
+      key_pressed = "equals"
+    }
+    ele = document.getElementById("icon-"+key_pressed);
+    ele_parent = (ele.parentElement);
+    ele_parent.classList.remove('calc-button')
+    ele_parent.classList.add('calc-button-after')
+    ele.classList.remove('button-icon')
+    ele.classList.add('button-icon-after')
+  }else if (Object.keys(calc_keys).includes(e.key)) {
+    ele = document.getElementById("icon-"+calc_keys[e.key])
+    ele_parent = (ele.parentElement);
+    ele_parent.classList.remove('calc-button')
+    ele_parent.classList.add('calc-button-after')
+    ele.classList.remove('button-icon')
+    ele.classList.add('button-icon-after')
+  }
+})
+
+
+
+document.addEventListener("keyup",(e) => {
+  if (e.ctrlKey && e.key === 'Backspace') {
+    ele = document.getElementById("icon-allclear");
+    ele_parent = (ele.parentElement);
+    ele_parent.classList.remove('calc-button-after')
+    ele_parent.classList.add('calc-button')
+    ele.classList.remove('button-icon-after')
+    ele.classList.add('button-icon')
+  } else if (e.key==="Enter" || e.key==="Backspace" || e.key==="."){
+    if (e.key==="."){
+      key_pressed = "decimal"
+    }else if (e.key==="Backspace"){
+      key_pressed = "backspace"
+    }else if (e.key==="Enter"){
+      key_pressed = "equals"
+    }
+    ele = document.getElementById("icon-"+key_pressed);
+    ele_parent = (ele.parentElement);
+    ele_parent.classList.remove('calc-button-after')
+    ele_parent.classList.add('calc-button')
+    ele.classList.remove('button-icon-after')
+    ele.classList.add('button-icon')
+  }else if (Object.keys(calc_keys).includes(e.key)) {
+    ele = document.getElementById("icon-"+calc_keys[e.key])
+    ele_parent = (ele.parentElement);
+    ele_parent.classList.remove('calc-button-after')
+    ele_parent.classList.add('calc-button')
+    ele.classList.remove('button-icon-after')
+    ele.classList.add('button-icon')
+  }
 })

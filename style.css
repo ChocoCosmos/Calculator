@@ -4,10 +4,6 @@
     --decimaliconpadding: 0.2%;
   }
 
-.calc-main, .calc-head, .calc-screen, .calc-body, .calc-button-row, .calc-button{
-    border: 0.5px solid;
-}
-
 html,body {
     margin: 0;
     padding: 0;
@@ -110,7 +106,77 @@ div {
     width: 6%;
 } */
 
+/*Theme 1
 
+html,body {
+    background-color: #222831;
+
+.button-icon {
+    filter: invert(100%) sepia(61%) saturate(6224%) hue-rotate(183deg) brightness(125%) contrast(87%);
+}
+
+.screen-character{
+    filter: invert(61%) sepia(44%) saturate(7134%) hue-rotate(150deg) brightness(97%) contrast(102%);
+}
+
+.calc-main, .calc-head, .calc-screen, .calc-body, .calc-button-row, .calc-button{
+    border: 0.5px solid #EEEEEE;
+}
+
+.calc-button:hover {
+    background-color: #393E46;
+    transition: 0.1s;
+}
+*/
+
+/*Theme 2*/
+
+html,body {
+    background-color: #252A34;
+}
+
+.button-icon {
+    filter: invert(32%) sepia(46%) saturate(5537%) hue-rotate(328deg) brightness(102%) contrast(101%);
+}
+
+.screen-character{
+    filter: invert(67%) sepia(32%) saturate(1190%) hue-rotate(128deg) brightness(97%) contrast(94%);
+}
+
+body,html,.calc-main, .calc-head, .calc-screen, .calc-body, .calc-button-row, .calc-button{
+   outline: 0.5px solid #EAEAEA;
+}
+
+.calc-button:hover {
+    background-color: #EAEAEA;
+    transition: 0.1s;
+}
+
+.calc-button:hover > .button-icon{
+    height: 30%;
+    filter: invert(26%) sepia(30%) saturate(3683%) hue-rotate(153deg) brightness(96%) contrast(97%);
+    transition: 0.1s;
+}
+
+.button-icon-after{
+    height: 30%;
+    transition: 0.1s;
+    filter: invert(26%) sepia(30%) saturate(3683%) hue-rotate(153deg) brightness(96%) contrast(97%);
+    transition: 0.1s;
+}
+
+.calc-button-after{
+    background-color: #EAEAEA;
+    transition: 0.1s;
+    border: 0.5px solid #EAEAEA;
+    height: 100%;
+    width: 25vw;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .screen-icon {
     height: var(--screeniconheight);
