@@ -43,19 +43,22 @@ div {
     height: 40%;
     width: 100vw;
     display: flex;
+    border: none;
 }
 
 .calc-screen {
     display: flex;
-    width: 100%;
-    flex-wrap: 1;
+    width: 90%;
     text-align: right;
     align-items: center;
     justify-content: right;
-    padding: 5vh 5vh 5vh 5vh;
+    border: none;
 }
 
-
+.head-empty {
+    width: 5%;
+    border: none;
+}
 
 .calc-body {
     width: 100%;
@@ -143,7 +146,7 @@ html,body {
     filter: invert(67%) sepia(32%) saturate(1190%) hue-rotate(128deg) brightness(97%) contrast(94%);
 }
 
-body,html,.calc-main, .calc-head, .calc-screen, .calc-body, .calc-button-row, .calc-button{
+body,html,.calc-main, .calc-head,.calc-body, .calc-button-row, .calc-button{
    outline: 0.5px solid #EAEAEA;
 }
 

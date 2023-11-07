@@ -57,11 +57,13 @@ function get_screen_chars(){
     screen_children.forEach(function (currentValue){
       width_screen_chars = width_screen_chars + currentValue.offsetWidth;
     })
+    console.log(width_screen_chars)
     return width_screen_chars
 }
 
 function get_screen_total() {
-    let width_screen_total = (document.getElementById('calc-screen-main').offsetWidth)*(0.9);
+    let width_screen_total = (document.getElementById('calc-screen-main').offsetWidth);
+    console.log(width_screen_total)
     return width_screen_total
 }
 
