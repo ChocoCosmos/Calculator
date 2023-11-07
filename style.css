@@ -150,15 +150,19 @@ body,html,.calc-main, .calc-head,.calc-body, .calc-button-row, .calc-button{
    outline: 0.5px solid #EAEAEA;
 }
 
-.calc-button:hover {
-    background-color: #EAEAEA;
-    transition: 0.1s;
+@media (hover: hover) {
+    .calc-button:hover {
+        background-color: #EAEAEA;
+        transition: 0.1s;
+    }
 }
 
-.calc-button:hover > .button-icon{
-    height: 30%;
-    filter: invert(26%) sepia(30%) saturate(3683%) hue-rotate(153deg) brightness(96%) contrast(97%);
-    transition: 0.1s;
+@media (hover: hover) {
+    .calc-button:hover > .button-icon{
+        height: 30%;
+        filter: invert(26%) sepia(30%) saturate(3683%) hue-rotate(153deg) brightness(96%) contrast(97%);
+        transition: 0.1s;
+    }
 }
 
 .button-icon-after{
