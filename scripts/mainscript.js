@@ -164,87 +164,339 @@ function equation_evaluate() {
 }
 
 document.querySelector("#button-seven").addEventListener("click", () => {
+    ele = document.getElementById("icon-7");
+    ele_parent = (ele.parentElement);
+    ele_parent.classList.remove('calc-button')
+    ele_parent.classList.add('calc-button-after')
+    ele.classList.remove('button-icon')
+    ele.classList.add('button-icon-after')
+    setTimeout(function() {
+      ele_parent.classList.remove('calc-button-after')
+      ele_parent.classList.add('calc-button')
+      ele.classList.remove('button-icon-after')
+      ele.classList.add('button-icon')
+  }, (0.15 * 1000));
     equation_append("7");
   });
 
 
 document.querySelector("#button-eight").addEventListener("click", () => {
+  ele = document.getElementById("icon-8");
+  ele_parent = (ele.parentElement);
+  ele_parent.classList.remove('calc-button')
+  ele_parent.classList.add('calc-button-after')
+  ele.classList.remove('button-icon')
+  ele.classList.add('button-icon-after')
+  setTimeout(function() {
+    ele_parent.classList.remove('calc-button-after')
+    ele_parent.classList.add('calc-button')
+    ele.classList.remove('button-icon-after')
+    ele.classList.add('button-icon')
+}, (0.15 * 1000));
     equation_append("8");
   });
 
 document.querySelector("#button-nine").addEventListener("click", () => {
+  ele = document.getElementById("icon-9");
+  ele_parent = (ele.parentElement);
+  ele_parent.classList.remove('calc-button')
+  ele_parent.classList.add('calc-button-after')
+  ele.classList.remove('button-icon')
+  ele.classList.add('button-icon-after')
+  setTimeout(function() {
+    ele_parent.classList.remove('calc-button-after')
+    ele_parent.classList.add('calc-button')
+    ele.classList.remove('button-icon-after')
+    ele.classList.add('button-icon')
+}, (0.15 * 1000));
     equation_append("9");
   });
 
 document.querySelector("#button-four").addEventListener("click", () => {
+  ele = document.getElementById("icon-4");
+  ele_parent = (ele.parentElement);
+  ele_parent.classList.remove('calc-button')
+  ele_parent.classList.add('calc-button-after')
+  ele.classList.remove('button-icon')
+  ele.classList.add('button-icon-after')
+  setTimeout(function() {
+    ele_parent.classList.remove('calc-button-after')
+    ele_parent.classList.add('calc-button')
+    ele.classList.remove('button-icon-after')
+    ele.classList.add('button-icon')
+}, (0.15 * 1000));
     equation_append("4");
   });
 
 document.querySelector("#button-five").addEventListener("click", () => {
+  ele = document.getElementById("icon-5");
+  ele_parent = (ele.parentElement);
+  ele_parent.classList.remove('calc-button')
+  ele_parent.classList.add('calc-button-after')
+  ele.classList.remove('button-icon')
+  ele.classList.add('button-icon-after')
+  setTimeout(function() {
+    ele_parent.classList.remove('calc-button-after')
+    ele_parent.classList.add('calc-button')
+    ele.classList.remove('button-icon-after')
+    ele.classList.add('button-icon')
+}, (0.15 * 1000));
     equation_append("5");
   });
 
 document.querySelector("#button-six").addEventListener("click", () => {
+  ele = document.getElementById("icon-6");
+  ele_parent = (ele.parentElement);
+  ele_parent.classList.remove('calc-button')
+  ele_parent.classList.add('calc-button-after')
+  ele.classList.remove('button-icon')
+  ele.classList.add('button-icon-after')
+  setTimeout(function() {
+    ele_parent.classList.remove('calc-button-after')
+    ele_parent.classList.add('calc-button')
+    ele.classList.remove('button-icon-after')
+    ele.classList.add('button-icon')
+}, (0.15 * 1000));
     equation_append("6");
   });
 
 document.querySelector("#button-one").addEventListener("click", () => {
+  ele = document.getElementById("icon-1");
+  ele_parent = (ele.parentElement);
+  ele_parent.classList.remove('calc-button')
+  ele_parent.classList.add('calc-button-after')
+  ele.classList.remove('button-icon')
+  ele.classList.add('button-icon-after')
+  setTimeout(function() {
+    ele_parent.classList.remove('calc-button-after')
+    ele_parent.classList.add('calc-button')
+    ele.classList.remove('button-icon-after')
+    ele.classList.add('button-icon')
+}, (0.15 * 1000));
     equation_append("1");
   });
 
 document.querySelector("#button-two").addEventListener("click", () => {
+  ele = document.getElementById("icon-2");
+  ele_parent = (ele.parentElement);
+  ele_parent.classList.remove('calc-button')
+  ele_parent.classList.add('calc-button-after')
+  ele.classList.remove('button-icon')
+  ele.classList.add('button-icon-after')
+  setTimeout(function() {
+    ele_parent.classList.remove('calc-button-after')
+    ele_parent.classList.add('calc-button')
+    ele.classList.remove('button-icon-after')
+    ele.classList.add('button-icon')
+}, (0.15 * 1000));
     equation_append("2");
   });
 
 document.querySelector("#button-three").addEventListener("click", () => {
+  ele = document.getElementById("icon-3");
+  ele_parent = (ele.parentElement);
+  ele_parent.classList.remove('calc-button')
+  ele_parent.classList.add('calc-button-after')
+  ele.classList.remove('button-icon')
+  ele.classList.add('button-icon-after')
+  setTimeout(function() {
+    ele_parent.classList.remove('calc-button-after')
+    ele_parent.classList.add('calc-button')
+    ele.classList.remove('button-icon-after')
+    ele.classList.add('button-icon')
+}, (0.15 * 1000));
     equation_append("3");
   });
 
 document.querySelector("#button-decimal").addEventListener("click", () => {
+  ele = document.getElementById("icon-decimal");
+  ele_parent = (ele.parentElement);
+  ele_parent.classList.remove('calc-button')
+  ele_parent.classList.add('calc-button-after')
+  ele.classList.remove('button-icon')
+  ele.classList.add('button-icon-after')
+  setTimeout(function() {
+    ele_parent.classList.remove('calc-button-after')
+    ele_parent.classList.add('calc-button')
+    ele.classList.remove('button-icon-after')
+    ele.classList.add('button-icon')
+}, (0.15 * 1000));
     equation_append(".");
   });
 
 document.querySelector("#button-zero").addEventListener("click", () => {
+  ele = document.getElementById("icon-0");
+  ele_parent = (ele.parentElement);
+  ele_parent.classList.remove('calc-button')
+  ele_parent.classList.add('calc-button-after')
+  ele.classList.remove('button-icon')
+  ele.classList.add('button-icon-after')
+  setTimeout(function() {
+    ele_parent.classList.remove('calc-button-after')
+    ele_parent.classList.add('calc-button')
+    ele.classList.remove('button-icon-after')
+    ele.classList.add('button-icon')
+}, (0.15 * 1000));
     equation_append("0");
   });
 
 document.querySelector("#button-equal").addEventListener("click", () => {
+  ele = document.getElementById("icon-equals");
+  ele_parent = (ele.parentElement);
+  ele_parent.classList.remove('calc-button')
+  ele_parent.classList.add('calc-button-after')
+  ele.classList.remove('button-icon')
+  ele.classList.add('button-icon-after')
+  setTimeout(function() {
+    ele_parent.classList.remove('calc-button-after')
+    ele_parent.classList.add('calc-button')
+    ele.classList.remove('button-icon-after')
+    ele.classList.add('button-icon')
+}, (0.15 * 1000));
     equation_evaluate();
   });
 
 document.querySelector("#button-allclear").addEventListener("click", () => {
+  ele = document.getElementById("icon-allclear");
+  ele_parent = (ele.parentElement);
+  ele_parent.classList.remove('calc-button')
+  ele_parent.classList.add('calc-button-after')
+  ele.classList.remove('button-icon')
+  ele.classList.add('button-icon-after')
+  setTimeout(function() {
+    ele_parent.classList.remove('calc-button-after')
+    ele_parent.classList.add('calc-button')
+    ele.classList.remove('button-icon-after')
+    ele.classList.add('button-icon')
+}, (0.15 * 1000));
     equation_reset();
   });
 
 document.querySelector("#button-clear").addEventListener("click", () => {
+  ele = document.getElementById("icon-backspace");
+  ele_parent = (ele.parentElement);
+  ele_parent.classList.remove('calc-button')
+  ele_parent.classList.add('calc-button-after')
+  ele.classList.remove('button-icon')
+  ele.classList.add('button-icon-after')
+  setTimeout(function() {
+    ele_parent.classList.remove('calc-button-after')
+    ele_parent.classList.add('calc-button')
+    ele.classList.remove('button-icon-after')
+    ele.classList.add('button-icon')
+}, (0.15 * 1000));
     equation_backspace();
   });
 
 document.querySelector("#button-percent").addEventListener("click", () => {
+  ele = document.getElementById("icon-%");
+  ele_parent = (ele.parentElement);
+  ele_parent.classList.remove('calc-button')
+  ele_parent.classList.add('calc-button-after')
+  ele.classList.remove('button-icon')
+  ele.classList.add('button-icon-after')
+  setTimeout(function() {
+    ele_parent.classList.remove('calc-button-after')
+    ele_parent.classList.add('calc-button')
+    ele.classList.remove('button-icon-after')
+    ele.classList.add('button-icon')
+}, (0.15 * 1000));
     equation_append("%");
   });
 
 document.querySelector("#button-divide").addEventListener("click", () => {
+  ele = document.getElementById("icon-/");
+  ele_parent = (ele.parentElement);
+  ele_parent.classList.remove('calc-button')
+  ele_parent.classList.add('calc-button-after')
+  ele.classList.remove('button-icon')
+  ele.classList.add('button-icon-after')
+  setTimeout(function() {
+    ele_parent.classList.remove('calc-button-after')
+    ele_parent.classList.add('calc-button')
+    ele.classList.remove('button-icon-after')
+    ele.classList.add('button-icon')
+}, (0.15 * 1000));
     equation_append("/");
   });
 
 document.querySelector("#button-multiply").addEventListener("click", () => {
+  ele = document.getElementById("icon-*");
+  ele_parent = (ele.parentElement);
+  ele_parent.classList.remove('calc-button')
+  ele_parent.classList.add('calc-button-after')
+  ele.classList.remove('button-icon')
+  ele.classList.add('button-icon-after')
+  setTimeout(function() {
+    ele_parent.classList.remove('calc-button-after')
+    ele_parent.classList.add('calc-button')
+    ele.classList.remove('button-icon-after')
+    ele.classList.add('button-icon')
+}, (0.15 * 1000));
     equation_append("*");
   });
 
 document.querySelector("#button-minus").addEventListener("click", () => {
+  ele = document.getElementById("icon--");
+  ele_parent = (ele.parentElement);
+  ele_parent.classList.remove('calc-button')
+  ele_parent.classList.add('calc-button-after')
+  ele.classList.remove('button-icon')
+  ele.classList.add('button-icon-after')
+  setTimeout(function() {
+    ele_parent.classList.remove('calc-button-after')
+    ele_parent.classList.add('calc-button')
+    ele.classList.remove('button-icon-after')
+    ele.classList.add('button-icon')
+}, (0.15 * 1000));
     equation_append("-");
   });
 
 document.querySelector("#button-plus").addEventListener("click", () => {
+  ele = document.getElementById("icon-+");
+  ele_parent = (ele.parentElement);
+  ele_parent.classList.remove('calc-button')
+  ele_parent.classList.add('calc-button-after')
+  ele.classList.remove('button-icon')
+  ele.classList.add('button-icon-after')
+  setTimeout(function() {
+    ele_parent.classList.remove('calc-button-after')
+    ele_parent.classList.add('calc-button')
+    ele.classList.remove('button-icon-after')
+    ele.classList.add('button-icon')
+}, (0.15 * 1000));
     equation_append("+");
   });
 
 document.querySelector("#button-parenthesis-left").addEventListener("click", () => {
+  ele = document.getElementById("icon-(");
+  ele_parent = (ele.parentElement);
+  ele_parent.classList.remove('calc-button')
+  ele_parent.classList.add('calc-button-after')
+  ele.classList.remove('button-icon')
+  ele.classList.add('button-icon-after')
+  setTimeout(function() {
+    ele_parent.classList.remove('calc-button-after')
+    ele_parent.classList.add('calc-button')
+    ele.classList.remove('button-icon-after')
+    ele.classList.add('button-icon')
+}, (0.15 * 1000));
     equation_append("(");
   });
 
 document.querySelector("#button-parenthesis-right").addEventListener("click", () => {
+  ele = document.getElementById("icon-)");
+  ele_parent = (ele.parentElement);
+  ele_parent.classList.remove('calc-button')
+  ele_parent.classList.add('calc-button-after')
+  ele.classList.remove('button-icon')
+  ele.classList.add('button-icon-after')
+  setTimeout(function() {
+    ele_parent.classList.remove('calc-button-after')
+    ele_parent.classList.add('calc-button')
+    ele.classList.remove('button-icon-after')
+    ele.classList.add('button-icon')
+}, (0.15 * 1000));
     equation_append(")");
   });
 
@@ -333,5 +585,57 @@ document.addEventListener("keyup",(e) => {
     ele_parent.classList.add('calc-button')
     ele.classList.remove('button-icon-after')
     ele.classList.add('button-icon')
+  }
+})
+
+
+document.addEventListener("touchstart",(e) => {
+  if (e.ctrlKey && e.key === 'Backspace') {
+    ele = document.getElementById("icon-allclear");
+    ele_parent = (ele.parentElement);
+    ele_parent.classList.remove('calc-button')
+    ele_parent.classList.add('calc-button-after')
+    ele.classList.remove('button-icon')
+    ele.classList.add('button-icon-after')
+    setTimeout(function() {
+      ele_parent.classList.remove('calc-button-after')
+      ele_parent.classList.add('calc-button')
+      ele.classList.remove('button-icon-after')
+      ele.classList.add('button-icon')
+  }, (1 * 1000));
+    
+  } else if (e.key==="Enter" || e.key==="Backspace" || e.key==="."){
+    if (e.key==="."){
+      key_pressed = "decimal"
+    }else if (e.key==="Backspace"){
+      key_pressed = "backspace"
+    }else if (e.key==="Enter"){
+      key_pressed = "equals"
+    }
+    ele = document.getElementById("icon-"+key_pressed);
+    ele_parent = (ele.parentElement);
+    ele_parent.classList.remove('calc-button')
+    ele_parent.classList.add('calc-button-after')
+    ele.classList.remove('button-icon')
+    ele.classList.add('button-icon-after')
+    setTimeout(function() {
+      ele_parent.classList.remove('calc-button-after')
+      ele_parent.classList.add('calc-button')
+      ele.classList.remove('button-icon-after')
+      ele.classList.add('button-icon')
+  }, (1 * 1000));
+  }else if (Object.keys(calc_keys).includes(e.key)) {
+    ele = document.getElementById("icon-"+calc_keys[e.key])
+    ele_parent = (ele.parentElement);
+    ele_parent.classList.remove('calc-button')
+    ele_parent.classList.add('calc-button-after')
+    ele.classList.remove('button-icon')
+    ele.classList.add('button-icon-after')
+    setTimeout(function() {
+      ele_parent.classList.remove('calc-button-after')
+      ele_parent.classList.add('calc-button')
+      ele.classList.remove('button-icon-after')
+      ele.classList.add('button-icon')
+  }, (1 * 1000));
   }
 })
